@@ -17,11 +17,14 @@ Throughout  two weeks,I will be focusing exclusively on JavaScript. 📚🔍 I'l
     20 Days 
 
 
-## Learning Material 💡💡
+## Learning Material 💡
 
 1. [JavaScript: From First Steps to Professional.](https://frontendmasters.com/courses/javascript-first-steps/changing-a-web-page-exercise/) .
 2. [avaScript: The Hard Parts, v2.](https://frontendmasters.com/courses/javascript-hard-parts-v2/) .
 3. [Deep JavaScript Foundations, v3.](https://frontendmasters.com/courses/deep-javascript-v3/) .
 
+## Folder Structure
+
+1. [**Day 1**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day1.md)
 
 
