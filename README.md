@@ -26,5 +26,6 @@ Throughout  two weeks,I will be focusing exclusively on JavaScript. 📚🔍 I'l
 ## Folder Structure
 
 1. [**Day 1**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day1.md)
+1. [**Day 2**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day2.md)
 
 
