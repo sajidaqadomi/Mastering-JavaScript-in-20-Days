@@ -3,33 +3,43 @@
 
 ## Arrays
    > An `array` is a special variable, which can hold more than one value:
-   - Arrays can hold any type of items, or mix and match!
-       ```
-       let mixedArray = ["pop", 6, "squish", false, document];
-       ```
-    - Array **indexes** start with 0.
-    [0] is the first element. [1] is the second element.
-        ```
-         mixedArray[0]
-         mixedArray[1]
-        ```
-    - The `length` property of an array returns the length of an array (the number of array elements).
-        ```
-        mixedArray.length;//5
-        ```
+
+   > Arrays can hold any type of items, or mix and match!
+      
+```
+let mixedArray = ["pop", 6, "squish", false, document];
+```
+       
+   > Array **indexes** start with 0
+     [0] is the first element 
+     [1] is the second element
+     
+  ```
+      mixedArray[0]
+      mixedArray[1]
+   ```
+        
+   >  The `length` property of an array returns the length of an array (the number of array elements).
+     
+```
+mixedArray.length;//5
+```
+        
 ### Some JavaScript Array Methods and Properties
-        
-> const arr1 = ["sara", "Lone"];
+
+```       
+const arr1 = ["sara", "Lone"];
 const arr2 = ["qadomi", "leane", "majed"];
-        
-|  Name  | Description | Examble
-    | -------- | ------- |------- |
-    |  concat()  | method concatenates (joins) two or more arrays. | ```const children = arr1.concat(arr2);```|
-    |  includes() | Check if an array contains the specified element |```arr1.icludes("sara")//true```|
-    | indexOf()	  | Search the array for an element and returns its position  |`arr1.indexOf(sara)//0`|
-    | join()	 | Joins all elements of an array into a string  |`arr1.join(" & ")`|
-    |  pop()	 | Removes the last element of an array, and returns that element |`arr1.pop()`|
-    | push()	| Adds new elements to the end of an array, and returns the new length |`arr1.push()`|
+```
+
+|  Name  | Description | Examble|
+| -------- | ------- |------- |
+|  concat()  | method concatenates (joins) two or more arrays. | `const children = arr1.concat(arr2);` |
+|  includes() | Check if an array contains the specified element | ``arr1.icludes("sara")//true` |
+| indexOf()	  | Search the array for an element and returns its position  | `arr1.indexOf(sara)//0` |
+| join()	 | Joins all elements of an array into a string  | `arr1.join(" & ")` |
+|  pop()	 | Removes the last element of an array, and returns that element | `arr1.pop()` |
+| push()	| Adds new elements to the end of an array, and returns the new length | `arr1.push()` |
     
 ### Mutating vs Non-Mutating Methods 
 > **Mutating methods** are array methods that modify the original array, while **non-mutating methods** return a new array without modifying the original.
