@@ -5,10 +5,10 @@
    **Value**: Data we want to work with.
     To check the data type for value use: `` typeof `` operator.
     
-    ```javascript
-    let myStr = "This is the first sentence.";
-    console.log(typeof(mystr));
-    ```
+  ```javascript
+     let myStr = "This is the first sentence.";
+     console.log(typeof(mystr));
+```
     
 #### data Types in JS: 
 - ###### Primitive types 
@@ -21,6 +21,7 @@
     |  Null  | let x = null |
     |  Undefined  | let x ; |
 
+
 - ###### Objects 
      &nbsp;
     |  type  | Examble |
@@ -28,7 +29,40 @@
     |  Object  | ``let employee = {name: "sajida" , ID: 2222}`` |
     |  Array  | ``let employee = [sajida,25,qadomi]`` |
 
-``
+### String 
+```
+let Name = "Sajida Jamal Qadomi";
+```
+>>String indexes are zero-based:
+The first character is in position 0, the second in 1, and so on
+```
+Name[0];//S
+Name[18]; //i
+```
+>To find the length of a string, use the built-in length property:
+ ```
+ Name.length;//19
+ Name[Name.length - 1]//i
+ ```
+
+##### String Methods
+
+-  A string is converted to upper case with `toUpperCase()`
+- A string is converted to lower case with `toLowerCase()`
+
+##### String Search Methods
+- The `indexOf()` method returns the index (position) the first occurrence of a string in a string:
+```
+let result = Name.indexOf("Qadomi");//13
+Name.indexOf("Mais");//-1 not found
+```
+
+- The `includes()` method returns true if a string contains a specified value.
+```
+let result = Name.includes("world");//false
+result = Name.includes("Sajida");//true
+```
+
 ## Operators
 
 1. ###### Arithmetic operators
@@ -99,8 +133,7 @@ let board = document.getElementById("board");
    
      console.log(4 + 5 * "7");
      //39 : Multiplication  and divisionhave higher precedence than addition and subtraction 
-     //Type Coercion for "7" from string to number-> process of automatic or implicit conversion of values from /one data type to another
-
+     //
     ```
     
 1. QUESTION #3
@@ -119,7 +152,7 @@ let board = document.getElementById("board");
        let y = '10';
        console.log(x == y);//true :  checks only for equality in value
        console.log(x === y); // false: is a stricter equality test and returns false if either //the value or the type of the two variables are differnt 
-    ```
+     ```
     
 1. QUESTION #5
 
@@ -133,5 +166,4 @@ let board = document.getElementById("board");
       //Type Coercion for "15" from string to number-> process of automatic or implicit conversion of values from /one data type to another
       // 2- true && isPositive :true where isPostive is true
       // 3- true || false (15 < 0) : true here there is type correction as before
-
-```
+   ```
