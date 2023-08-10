@@ -20,7 +20,7 @@ Throughout  two weeks,I will be focusing exclusively on JavaScript. 📚🔍 I'l
 ## Learning Material 💡
 
 1. [JavaScript: From First Steps to Professional.](https://frontendmasters.com/courses/javascript-first-steps/changing-a-web-page-exercise/) .
-2. [avaScript: The Hard Parts, v2.](https://frontendmasters.com/courses/javascript-hard-parts-v2/) .
+2. [JavaScript: The Hard Parts, v2.](https://frontendmasters.com/courses/javascript-hard-parts-v2/) .
 3. [Deep JavaScript Foundations, v3.](https://frontendmasters.com/courses/deep-javascript-v3/) .
 
 ## Folder Structure
@@ -30,4 +30,5 @@ Throughout  two weeks,I will be focusing exclusively on JavaScript. 📚🔍 I'l
 1. [**Day 3**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day3.md)
 1. [**Day 4**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day4.md)
 1. [**Day 5**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day5.md)
+1. [**Day 6**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day6.md)
 
