@@ -241,7 +241,92 @@ definition in 'anotherFunction', this new incrementCounter function was created 
 - Asynchronous JavaScript: Callbacks and Promises rely on closure to persist state in an asynchronous environment
 
 📖 Another reference I recommend **[https://www.freecodecamp.org/news/lets-learn-javascript-closures-66feb44f6a44/](https://www.freecodecamp.org/news/lets-learn-javascript-closures-66feb44f6a44/)** 💁‍♀️ 
-## Coding Exercises 🔜 💁‍♀️ 
+## Coding Exercises  💁‍♀️ 
 
-🔜 
+**QUESTION #1**
+
+> Complete the code for the squareList function using any combination of map(), filter(), and reduce(). The function should return a new array containing the squares of only the positive integers (decimal numbers are not integers) when an array of real numbers is passed to it. An example of an array of real numbers is [-3, 4.8, 5, 3, -3.2].
+
+> **Note**: Your function should not use any kind of for or while loops or the forEach() function.
+
+```
+const squareList = arr => {
+  // Only change code below this line
+  return arr.filter(item=> ((item >=0) && (item % 1 === 0)) ).map(item => item**2)
   
+  // Only change code above this line
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers);
+```
+**QUESTION #2**
+
+>Fill in the urlSlug function so it converts a string title and returns the hyphenated version for the URL. You can use any of the methods covered in this section, and don't use replace. Here are the requirements:
+The input is a string with spaces and title-cased words
+The output is a string with the spaces between words replaced by a hyphen (-)
+The output should be all lower-cased letters
+The output should not have any spaces
+
+```
+// Only change code below this line
+function urlSlug(title) {
+  return title.split(" ").filter(item => item!=="").join("-").toLowerCase();
+
+
+}
+// Only change code above this line
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
+  
+```
+**QUESTION #3**
+
+> Implement a JavaScript function called mapAsync that takes an array and a callback function. The function should map each element of the array to a new value using the callback function asynchronously.
+The final result should be returned as a Promise.
+
+```
+function mapAsync(arr, mapfunction) {
+  return new Promise(function (resolve, reject) {
+    let newArr = [];
+
+    arr.forEach((element) => {
+      newArr.push(mapfunction(element));
+    });
+
+    setTimeout(() => {
+      resolve(newArr);
+    }, 1000);
+  });
+}
+
+function mapfunction(elment) {
+  return elment * 2;
+}
+
+const PromisMapSync = mapAsync([2, 5, 8, 10], mapfunction);
+PromisMapSync.then(
+  (value) => {
+    console.log(value);
+  },
+  (reject) => {
+    console.log(reject);
+  }
+);
+```
+
+**QUESTION #4**
+> Write a JavaScript function called sumRange that calculates the sum of all integers in a given range. The function should use recursion to handle the calculation and demonstrate understanding of the call stack.
+
+```
+function sumRang(min,max){
+    if(min===max){
+        return max;
+    }else{
+        return min+sumRang(min+1,max);
+    }
+}
+
+console.log(sumRang(2,20))
+
+```
+
