@@ -541,3 +541,193 @@ These tools came out with a way that we can do their typing annotations using on
 - JavaScript has a (`dynamic`) `type` system, which uses various forms of `coercion` for `value type` `conversion`, including `equality comparisons`.
 
 - We simply cannot write quality `JS` programs without knowing the `types` involved in our operations.
+
+---
+
+## delieverables 👩‍💻🥳
+
+### QUESTION #1
+
+Given the following `promisesArray`, convert the array into an object using the
+`convertToObj` function.
+
+You should apply typescript types to every promise, the input of `convertToObj`,
+and the output of `convertToObj`. 
+
+Build interfaces and types as needed.
+
+```javascript
+interface ReturnObj {
+  x: string;
+  y: number;
+}
+
+type SayHelloWorld = Promise<string>;
+
+type CheckBoolean = (x: boolean) => Promise<boolean>;
+
+type PromisesArray = [SayHelloWorld, CheckBoolean, Promise<ReturnObj>];
+
+const sayHelloWorld: SayHelloWorld = new Promise((resolve) => {
+  resolve("Hello world!");
+});
+
+const checkBoolean: CheckBoolean = (boolean) =>
+  new Promise((resolve, reject) => {
+    if (boolean) {
+      resolve(boolean);
+    } else {
+      reject(`Input is false :(`);
+    }
+  });
+
+const returnObj: Promise<ReturnObj> = new Promise((resolve) => {
+  resolve({
+    x: "meow",
+    y: 45,
+  });
+});
+
+const Names = {
+  object: "returnObj",
+  string: "sayHelloWorld",
+  function: "function",
+};
+
+const promisesArray: PromisesArray = [sayHelloWorld, checkBoolean, returnObj];
+
+const convertToObj = async (array: PromisesArray) => {
+  //write your code here;
+  const newArray = await Promise.all(
+    array.map(async (promiseItem) => {
+      if (typeof promiseItem == "function") {
+        return [promiseItem.name, await promiseItem(true)];
+      }
+      const resolvePromiseItem = await promiseItem;
+      return [Names[typeof resolvePromiseItem], resolvePromiseItem];
+    })
+  );
+  console.log(Object.fromEntries(newArray));
+  return Object.fromEntries(newArray);
+};
+
+convertToObj(promisesArray);
+
+
+```
+
+-------------------------------------------------------------------
+
+### QUESTION #2:
+
+What will be the output of the following code snippet? Pick the right choice
+then **justify your answer with an explanation**.
+
+```javascript
+function testScope1() {
+  if (true) {
+    var a = 1;
+    let b = 2;
+    const c = 3;
+  }
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+
+testScope1();
+
+```
+**Choices:**
+
+A) `undefined`, `undefined`, `undefined`   
+
+B) `1`, `undefined`, `ReferenceError`  
+
+C) `1`, `ReferenceError`, `ReferenceError`   
+
+D) `1`, `ReferenceError` ✅
+
+//🖐️ D) `1`, `ReferenceError` ✅ a has a Function Scope, but b and  c have  Block Scope
+
+-------------------------------------------------------------------
+
+### QUESTION #3:
+
+What will be the output of the following code snippet? Pick the right choice
+then **justify your answer with an explanation**.
+
+```javascript
+function testScope2() {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  if (true) {
+    var a = 1;
+    let b = 2;
+    const c = 3;
+  }
+}
+
+testScope2();
+
+```
+
+**Choices:**
+
+A) `undefined`, `ReferenceError`  ✅
+
+B) `1`, `undefined`, `ReferenceError`
+
+C)`undefined`, `undefined`,`ReferenceError`  
+
+D) `1`, `ReferenceError`
+
+🖐️A) `undefined`, `ReferenceError`  ✅  Variables declared with let or const are hoisted WITHOUT a default initialization. So accessing them before the line they were declared throws ReferenceError: Cannot access //'variable' before initialization, But variables declared with var are hoisted WITH a default initialization of undefined. So accessing them before the line they were declared returns undefined.
+
+
+
+-------------------------------------------------------------------
+
+### QUESTION #4:
+
+What will be the output of the following code snippet? Pick the right choice
+then **justify your answer with an explanation**.
+
+```javascript
+
+function testScope3() {
+  var a = 36;
+  let b = 100;
+  const c = 45;
+
+  console.log([a, b, c]);
+
+  if (true) {
+    var a = 1;
+    let b = 2;
+    const c = 3;
+
+    console.log([a, b, c]);
+  }
+
+  console.log([a, b, c]);
+}
+
+testScope3();
+
+```
+
+**choices:**
+
+A) `[ 36, 100, 45 ]` | `[ 1, 2, 3 ]` | `[ 36, 2, 3 ]`   
+
+B) `[ 36, 100, 45 ]` | `[1, 2, 3 ]` | `[ 36, 100, 45 ]` 
+
+C) `[ 36, 100, 45 ]` | `[ 1, 2, 3 ]` | `[ 1,100, 45 ]`   ✅
+
+D) `[ 36, 100, 45 ]` | `[ 1, 2, 3 ]` | `[ 1, 2, 3 ]`
+
+🖐️  C) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 1,100, 45 ] 
+ a has Function Scope, but b and  c have  Block Scope
+
