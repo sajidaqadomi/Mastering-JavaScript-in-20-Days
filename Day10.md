@@ -747,10 +747,161 @@ Number(false);             //   0
 
 ## JavaScript's dynamic typing is not a weakness, it's one of its strong qualities.🥳
 
+---
+## Coding Exercises 👩‍💻💡🤔
+
+### Question 1:
+
+> Write a function called `convertStringToNumber` that converts a string to a
+  number using the unary plus operator.
+
+ If the input is not a string, return an object of the input's value and type.
+
+```
+function convertStringToNumber(input) {
+   //write your own code here
+return typeof input === "string"
+? +input
+: { value: input, type: typeof input };
+ }
+```
+console.log(convertStringToNumber("sajida"), convertStringToNumber(true));
+
+----
+
+## Question 2:
+
+>  Write a function called `checkNaN` that takes a single argument and returns
+ `true` if the argument is `NaN` and `false` otherwise.
+
+ ```
+const checkNaN = (value) => {
+  //write your own code here
+  return isNaN(value);
+};
+console.log(checkNaN("22"),checkNaN("SA"),checkNaN(true))
+ ```
 
 
+---
 
+ ## Question 3:
 
+> Write a function called `isEmptyValue` that checks if a given input is an empty value (undefined,
+> null, or empty string).
 
+```
+function isEmptyValue(value) {
+  //write your own code here
+  return value == null || (typeof value == "string" && !value.trim());
+}
 
+console.log(
+  isEmptyValue(null),
+  isEmptyValue(undefined),
+  isEmptyValue("   "),
+  isEmptyValue(22),
+  isEmptyValue({ name: "sara" })
+);
+```
+---
 
+ ## Question 4:
+
+> Write a function called `compareObjects` that takes 2 arguments of type `"object"` and compares them. If both arguments are equal, return `true`. If
+> not, return `false`.
+>  If either argument is not of type `"object"`, the function should return an
+>  array of the arguments.
+
+ ```
+function compareObjects(input1, input2) {
+  //write your own code here
+
+  if (!isObject(input1) || !isObject(input2)) {
+    return false;
+  } else {
+    let input1Keys = Object.keys(input1);
+    let input2Keys = Object.keys(input2);
+
+    if (input1Keys.length !== input2Keys.length) {
+      return false;
+    }
+
+    for (const key of input1Keys) {
+      let value1 = input1[key];
+      let value2 = input2[key];
+
+      let areObjects = isObject(value1) && isObject(value2);
+      if (
+        (!areObjects && value1 !== value2) ||
+        (areObjects && !compareObjects(value1, value2))
+      ) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
+
+function isObject(value) {
+  return typeof value == "object" && value != null;
+}
+
+const hero1 = {
+  name: "Batman",
+  address: {
+    city: "Gotham",
+  },
+};
+const hero2 = {
+  name: "Batman",
+  address: {
+    city: "Gotham",
+  },
+};
+
+console.log(compareObjects(hero1, hero2));
+```
+
+----
+
+ ## Question 5:
+
+> Write a function called `complexCoercion` that takes a single argument and
+> checks if its type is primitive, and if so returns a coerced value according to
+>  the rules below.
+> coercion rules:
+- if input is primive and:
+- if input is a number, convert to string and then return a boolean.
+- if input is a string, return a boolean.
+- if input is `null` or `undefined`, return `false`.
+
+- If input is not a primitive type, return the argument.
+
+ ```javascript
+const complexCoercion = (input) => {
+  if (input == null) {
+    return false;
+  }
+
+  if (typeof input == "string") {
+    return !!input;
+  }
+
+  if (typeof input == "number") {
+    return !!input.toString();
+  }
+
+  return input;
+};
+
+console.log(
+  complexCoercion(22),
+  complexCoercion(" "),
+  complexCoercion("sajida"),
+  complexCoercion(null),
+  complexCoercion(undefined),
+  complexCoercion({ name: "sajida" })
+);
+```
