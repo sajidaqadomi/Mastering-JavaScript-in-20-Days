@@ -38,4 +38,5 @@ Throughout  two weeks,I will be focusing exclusively on JavaScript. 📚🔍 I'l
 1. [**Day 11**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day11.md)
 1. [**Day 12**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day12.md)
 1. [**Day 13**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day13.md)
+1. [**Day 14**](https://github.com/sajidaqadomi/Mastering-JavaScript-in-20-Days/blob/main/Day14.md)
 
